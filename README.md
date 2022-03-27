@@ -1,6 +1,6 @@
 # Bump Bot
 
-###### A bot used to bump servers every hour or so.
+##### A bot used to bump servers every hour or so.
 
 ## ⚠️ Warning:
 
