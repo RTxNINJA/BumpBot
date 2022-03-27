@@ -3,10 +3,9 @@ from time import sleep
 import requests
 import os
 
-channelID = '863515625712648192'
-
 load_dotenv()
 _token = os.getenv('TOKEN')
+_channelID = os.getenv('CHANNEL_ID')
 
 class Bot:
     def __init__(self, authToken, channelID, message):
@@ -23,8 +22,8 @@ class Bot:
 
     def run(self):
         while True:
-            self.session = requests.post(f"https://discord.com/api/v9/channels/{channelID}/messages", data=self.data, headers=self.header)
+            self.session = requests.post(f"https://discord.com/api/v9/channels/{self.channelID}/messages", data=self.data, headers=self.header)
             sleep(self.minute * 121)
 
-bBot = Bot(authToken=_token, channelID='863515625712648192', message="/bump")
+bBot = Bot(authToken=_token, channelID=_channelID, message="/bump")
 bBot.run()
